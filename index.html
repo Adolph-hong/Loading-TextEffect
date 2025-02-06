@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading</title>
+    <style>
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./loading-img/2.gif);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: -2;
+        }
+
+        body:hover {
+            box-shadow: inset 0px 30px 50px 10px rgb(0, 247, 255),
+                inset 0px 30px 60px 30px rgb(247, 0, 255);
+            transition: all 0.8s ease-in-out;
+        }
+
+        .bk {
+            background-image: url(./loading-img/21.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            width: 60vw;
+            height: 60vh;
+            z-index: -1;
+            animation: big-small 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes big-small {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            z-index: 1;
+        }
+
+        .container::before {
+            animation: border-fast 2s linear infinite;
+            border: 4px solid rgba(255, 1, 124, 0.5);
+            box-shadow: 0 0 50px rgba(253, 253, 253, 0.7);
+        }
+
+        .container::after {
+            animation: border-slow 6s linear infinite;
+            border: 4px solid rgba(0, 230, 230, 0.5);
+            box-shadow: 0 0 50px rgb(212, 6, 231);
+        }
+
+        @keyframes border-fast {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes border-slow {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .loading-text {
+            font-size: 20px;
+            color: #ffeb3b;
+            position: relative;
+            animation: t 1.5s ease-in-out infinite;
+        }
+
+        @keyframes t {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .container:hover::before,
+        .container:hover::after {
+            box-shadow: 0 0 50px 20px #ff00ff, inset 0 0 50px #00e6e6;
+        }
+
+        .bk:hover {
+            box-shadow: 0 0 60px 30px rgba(0, 179, 255, 0.8), inset 0 0 60px rgba(0, 179, 255, 0.8);
+        }
+
+        h2 {
+            color: white;
+            font-size: 4em;
+            display: flex;
+            position: absolute;
+            bottom: 20px;
+
+        }
+
+        h2 span {
+            animation: text 5s linear infinite;
+        }
+
+        h2 span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        h2 span:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        h2 span:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        h2 span:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        h2 span:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        h2 span:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        h2 span:nth-child(7) {
+            animation-delay: 0.6s;
+        }
+
+        h2 span:nth-child(8) {
+            animation-delay: 0.7s;
+        }
+
+        h2 span:nth-child(9) {
+            animation-delay: 0.8s;
+        }
+
+        h2 span:nth-child(10) {
+            animation-delay: 0.9s;
+        }
+
+        h2 span:nth-child(11) {
+            animation-delay: 1s;
+        }
+
+        h2 span:nth-child(12) {
+            animation-delay: 1.1s;
+        }
+
+        @keyframes text {
+
+            0%,
+            100% {
+                color: white;
+                filter: blur(1px);
+                text-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 30px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 50px #00b3ff,
+                    0 0 60px #00b3ff,
+                    0 0 70px #00b3ff,
+                    0 0 80px #00b3ff,
+                    0 0 90px #00b3ff,
+                    0 0 100px #00b3ff,
+                    0 0 110px #00b3ff,
+                    0 0 120px #00b3ff;
+            }
+
+            25%,
+            75% {
+                color: black;
+                filter: blur(0px);
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loading-text">歌岸似聲</div>
+    </div>
+    <div class="bk">
+    </div>
+    <h2>
+        <span>世</span>
+        <span>界</span>
+        <span>以</span>
+        <span>痛</span>
+        <span>吻</span>
+        <span>我</span>
+        <span>，</span>
+        <span>我</span>
+        <span>直</span>
+        <span>接</span>
+        <span>痛</span>
+        <span>死</span>
+    </h2>
+</body>
+
+</html>
